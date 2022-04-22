@@ -3,15 +3,25 @@ import './Home.css'
 
 export function Home() {
 
-    const itensArray = [
-        { id: 1, text: "Acordar as 7 horas"},
-        { id: 2, text: "Lavar a louça"},
-        { id: 3, text: "Passear com os cachorros por 30 minutos"},
-        { id: 4, text: "Lavar o carro inteiro", checked: true}
-    ]
+    // const itensArray = [
+    //     { text: "Acordar as 7 horas"},
+    //     { text: "Lavar a louça"},
+    //     { text: "Passear com os cachorros por 30 minutos"},
+    //     { text: "Lavar o carro inteiro", checked: true}
+    // ]
 
-    localStorage.setItem("chave", "valor")      //  Armazena nos arquivos do navegador, continua mesmo em nova janela
-    sessionStorage.setItem("chave", "valor")    //  Armazena na aba do navegador, é perdido se fechar a aba
+    // //  Salva o array acima no local storage
+    // itensArray.map((item, index) => localStorage.setItem(index, JSON.stringify(item)))
+    
+    
+    //  Cria um array com todos os objetos do local storage
+    //  Isso é necessário pois não é possível iterar (função map) sobre o {...localStorage} para mostrar os itens na tela
+    const novoArray = []
+    for(let i = 0; i < localStorage.length; i++) {
+        novoArray.push(
+            JSON.parse(localStorage[i])
+        )
+    }
 
     return <>
         <div className="container">
@@ -21,8 +31,8 @@ export function Home() {
                 })}
             */}
 
-            {itensArray.map( (obj) => {
-                return <TodoListItem key={obj.id} {...obj} />
+            {novoArray.map((obj, index) => {
+                return <TodoListItem key={index} id={index} {...obj} />
             })}
         </div>
     </>
