@@ -11,17 +11,11 @@ export function Home() {
     // ]
 
     // //  Salva o array acima no local storage
-    // itensArray.map((item, index) => localStorage.setItem(index, JSON.stringify(item)))
+    // localStorage.setItem("itensArray",JSON.stringify(itensArray))
     
     
     //  Cria um array com todos os objetos do local storage
-    //  Isso é necessário pois não é possível iterar (função map) sobre o {...localStorage} para mostrar os itens na tela
-    const novoArray = []
-    for(let i = 0; i < localStorage.length; i++) {
-        novoArray.push(
-            JSON.parse(localStorage[i])
-        )
-    }
+    const novoArray = JSON.parse(localStorage.getItem("itensArray"))
 
     return <>
         <div className="container">
