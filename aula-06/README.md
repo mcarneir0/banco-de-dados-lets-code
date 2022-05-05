@@ -18,9 +18,13 @@
 
 8. Existe alguma cidade com mais de um código de área de telefone?
 
+9. Gere uma relação com os nomes dos clientes, suas cidades e países, em ordem alfabética de nome;
+
+10. Na relação do item (9), filtre pelos clientes da Alemanha, da França e da Espanha, excluindo-se os clientes que vivem nas capitais destes países;
+
 ### EXTRA (300XP)
 
-1. Liste o top 3 de funcionários com mais vendas no primeiro trimestre de 1996;
+1. Liste o top 3 de funcionários com mais vendas no primeiro trimestre de 1997;
 
 2. Conte todos os diferentes fornecedores por país. Agrupe categorizando os países em 'Americas' (se o país for USA, Brazil ou Canada) e 'Outros' senão. Detalhe, estamos buscando aqueles cujo DDD não comece com o dígito 1;
 
