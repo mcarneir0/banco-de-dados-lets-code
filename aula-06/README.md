@@ -4,7 +4,26 @@
 
 1. Quantos são os produtos que são da CategoryID 2?
 
+    ```sql
+    SELECT category_id, COUNT(*)
+        FROM products
+        GROUP BY category_id
+        HAVING category_id = 2;
+    ```
+
+    12 produtos
+
 2. Quantos produtos com SupplierID idêntico ao CategoryID e que custam mais do que 10?
+
+    ```sql
+    SELECT supplier_id, COUNT(*)
+        FROM products
+        WHERE unit_price > 10
+        GROUP BY supplier_id, category_id
+        HAVING supplier_id = category_id;
+    ```
+
+    5 produtos
 
 3. Liste todos os nomes de produtos, suas "Units" e seus respectivos preços distintos que pertecem às categorias 1, 2 e 7;
 
